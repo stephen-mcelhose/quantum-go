@@ -1,0 +1,54 @@
+{
+  "lockfileVersion": 1,
+  "skills": {
+    "csgdaa-core/commit": {
+      "version": "1.1.0",
+      "resolved": "95a5fd2ada74c16ce15688474192e90b0c88ca23",
+      "integrity": "sha256-498c296af6cdbf81d3d59b2126f6960e93d06a57dccf73ab4ed9541197b103ad",
+      "source": "github:bayer-int/csgdaa-skills",
+      "installedAt": "2026-02-13T23:44:39.043Z"
+    },
+    "csgdaa-core/explore": {
+      "version": "1.1.0",
+      "resolved": "d4e8f90322d40e31e17a0f6f3cb5f88d97200bc7",
+      "integrity": "sha256-f3c21b856184b91ef9c0af413432d4ce0dc9449e36f714ef014f15d72229249d",
+      "source": "github:bayer-int/csgdaa-skills",
+      "installedAt": "2026-02-13T23:44:40.905Z"
+    },
+    "csgdaa-core/plan": {
+      "version": "2.3.0",
+      "resolved": "d4e8f90322d40e31e17a0f6f3cb5f88d97200bc7",
+      "integrity": "sha256-c2bf249d759e2dbdbca76daf047bb39bae0d4a8b9220525dec82b4d49b1c767f",
+      "source": "github:bayer-int/csgdaa-skills",
+      "installedAt": "2026-02-13T23:44:43.840Z"
+    },
+    "csgdaa-core/research": {
+      "version": "1.1.0",
+      "resolved": "d4e8f90322d40e31e17a0f6f3cb5f88d97200bc7",
+      "integrity": "sha256-c969ba5e06531996409dbdc0e6478d033336ca1d47768b20efd6a921da8a2643",
+      "source": "github:bayer-int/csgdaa-skills",
+      "installedAt": "2026-02-13T23:44:45.708Z"
+    },
+    "csgdaa-core/review": {
+      "version": "2.3.2",
+      "resolved": "8fe3dc3962c2288d37caf95f6212265c6cfa3579",
+      "integrity": "sha256-6671b2152f0d4961fcd23ab8681f997c02caf33143e5a8e5d85f46c39b306571",
+      "source": "github:bayer-int/csgdaa-skills",
+      "installedAt": "2026-02-13T23:44:48.620Z"
+    },
+    "csgdaa-core/skill-creator": {
+      "version": "1.2.0",
+      "resolved": "d4e8f90322d40e31e17a0f6f3cb5f88d97200bc7",
+      "integrity": "sha256-70a1923890dc3be3afc1c06e15718a22b11a33050c57891f0b58ea50fdbd886d",
+      "source": "github:bayer-int/csgdaa-skills",
+      "installedAt": "2026-02-13T23:44:50.486Z"
+    },
+    "csgdaa-core/verify": {
+      "version": "1.1.0",
+      "resolved": "d4e8f90322d40e31e17a0f6f3cb5f88d97200bc7",
+      "integrity": "sha256-69bdc9f142f3e9cdfcc8f8042f021fa9322cc7ba9d04c7ee4739bffb399bcd02",
+      "source": "github:bayer-int/csgdaa-skills",
+      "installedAt": "2026-02-13T23:44:51.632Z"
+    }
+  }
+}
