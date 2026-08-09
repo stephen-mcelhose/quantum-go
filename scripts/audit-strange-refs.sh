@@ -91,6 +91,7 @@ done < <(grep -rni "strange" \
   --include="*.yml" \
   --exclude-dir=".git" \
   --exclude-dir=".agents" \
+  --exclude-dir="venv" \
   "$REPO_ROOT" 2>/dev/null || true)
 
 echo
