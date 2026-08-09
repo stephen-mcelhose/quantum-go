@@ -112,6 +112,7 @@ All other gates fall to the general matrix-vector multiply path.
 - Identity is type-checked (`if _, ok := gate.(*core.Identity)`) and skipped in O(1).
 - Measurement's matrix is identity — measurement is handled by the engine post-execution.
 - Fredkin (CSWAP) is the controlled-SWAP — useful for sorting networks on qubits.
+- Toffoli is the syndrome correction gate in the 3-qubit bit-flip code — see [[error-correction]] for the full circuit.
 - See [[rotation-implementations]] for parameterized gates (Rx/Ry/Rz/U/S/T/V/CR/PhaseShift).
 - For the complete gate reference table (constructors, captions, matrices, QASM mnemonics for every gate), see [[gate-zoo]].
 - To add a new gate type, see [[how-to-add-a-new-gate]].

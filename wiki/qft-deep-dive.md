@@ -137,7 +137,7 @@ The IQFT is used in [[shors-algorithm]] to extract the period from the accumulat
 - `NewFourier(dim, idx)` returns a BlockGate — it applies recursively via `ApplyOptimize`, never materializes the full matrix.
 - `SetInverse(true)` on a Fourier gate = IQFT. The block executes its steps in reverse.
 - QFT on |00⟩ = uniform superposition [0.5, 0.5, 0.5, 0.5] for n=2 — verified in [[verification-tests]].
-- CR gates in QFT are the same `NewCr` as in [[rotation-implementations]] — just used at specific angles.
+- CR gates in QFT are the same `NewCr` as in [[rotation-implementations]] — just used at specific angles. CR is a controlled PhaseShift — see [[rotation-gates]] for the phase rotation geometry.
 
 ## References
 

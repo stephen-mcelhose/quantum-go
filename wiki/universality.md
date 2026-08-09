@@ -73,6 +73,7 @@ Any unitary can be approximated to accuracy ε using O(log^c(1/ε)) gates from a
 - CNOT is the simplest entangling gate; with U it achieves full quantum universality.
 - Hardware compilers target {U, CNOT} — understanding universality explains the compilation pipeline.
 - Continuous gates (Rx/Ry/Rz) require approximation when compiled to discrete hardware gate sets.
+- [[rotation-gates]] explains the Rx/Ry/Rz/PhaseShift family as Bloch sphere rotations — the conceptual basis for understanding U gate decompositions.
 
 ## Sources
 
