@@ -42,3 +42,4 @@
 ## [2026-08-09] policy | AGENTS.md updated: no wiki/raw/ dir; external URLs in ## Sources are the raw pointer
 ## [2026-08-09] ingest | qelib1-standard-gates (curl: github.com/Qiskit/openqasm OpenQASM2.x — qelib1.inc, qft.qasm, teleport.qasm; Apache 2.0)
 ## [2026-08-09] citations | upgraded 10 arXiv references via export.arxiv.org/api/query — fixed Steane wrong title/venue; fixed Shor FOCS vs arXiv title; expanded Cross et al. to full authors; added References to arithmetic-gates; clarified Coppersmith IBM Report year
+## [2026-08-09] lint | 36 pages checked, 3 orphans found, 3 fixed — added inbound links: circuits-library (quantum-dsl, project-overview), state-vector-model (simulation-engine), testing-strategy (project-overview, how-to-add-a-new-gate); no broken links; OKF frontmatter complete on all pages

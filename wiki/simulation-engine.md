@@ -69,7 +69,7 @@ The `init()` in `computations.go` sets `core.GlobalStepExecutor = CalculateNewSt
 
 ## Key Points
 
-- State vector size is 2ⁿ complex128 values — allocate once, transform in place per step.
+- State vector size is 2ⁿ complex128 values — allocate once, transform in place per step. See [[state-vector-model]] for a full lifecycle tour.
 - InitAlpha encodes initial qubit states as tensor products; `1.0` → |0⟩, `0.0` → |1⟩.
 - Only `StepNormal` steps are executed; pseudo/probability steps are display artifacts.
 - Measurement is probabilistic collapse via `rand.Float64()` against Born-rule probabilities.

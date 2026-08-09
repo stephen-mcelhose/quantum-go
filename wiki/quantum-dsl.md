@@ -120,6 +120,7 @@ Gate constructors (NewHadamard, NewCnot, etc.) live in [[gate-implementations]].
 - **Block = reusable sub-circuit** — the QFT block is the same Block whether used standalone or inside Shor's algorithm.
 - **Inverse is automatic** — setting `Inverse=true` on a Block reverses step order and conjugate-transposes each gate's matrix; no separate IQFT implementation needed.
 - **InitAlpha** allows starting qubits in states other than |0⟩ — a value of 0.0 starts the qubit in |1⟩.
+- **Pre-built programs** are available in [[circuits-library]] — use those rather than constructing common circuits by hand.
 
 ## Sources
 

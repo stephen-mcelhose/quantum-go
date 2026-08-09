@@ -102,6 +102,7 @@ Ported from [redfx-quantum/strange](https://github.com/redfx-quantum/strange) (B
 - The CLI tool is called `strange` (honouring the Java original).
 - Qiskit Little-Endian ordering is matched, making cross-verification tractable.
 - The three packages (`math`, `core`, `local`) have strict layering — see [[package-architecture]].
+- Pre-built circuits are in [[circuits-library]]; the layered test approach is described in [[testing-strategy]].
 
 ## Sources
 

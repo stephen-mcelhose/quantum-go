@@ -155,3 +155,4 @@ Update `wiki/gate-zoo.md` table with the new gate's constructor, caption, matrix
 - BlockGates (composite) never implement `GetMatrix()` — they implement `ApplyOptimize()` instead. See [[composite-gates]].
 - If the gate has no standard QASM equivalent, the export emits a comment. That is acceptable.
 - New fuzz targets can be added to `local/fuzz_test.go` for parameterised gates — see [[fuzz-testing]].
+- For the full picture of how tests are organized across the codebase, see [[testing-strategy]].
