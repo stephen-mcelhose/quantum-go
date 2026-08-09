@@ -3,10 +3,9 @@
 
 # Compiled binaries
 /quantum-go
-wikigraph/wikigraph
+wikigraph/
 
 # Generated output
-wikigraph/wiki_graph.html
 wiki_graph.json
 
 # IDE / tool files
