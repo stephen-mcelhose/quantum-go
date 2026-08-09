@@ -143,6 +143,8 @@ All rotation gates support `SetInverse(true)`, which causes `GetMatrix()` to ret
 - T gate is the critical non-Clifford gate for [[universality]].
 - CR is the 4×4 controlled phase shift — the engine has an optimized path for it (scalar multiply on the |11⟩ amplitude only).
 - U gate subsumes all single-qubit rotations: H = U(π/2, 0, π).
+- For the complete rotation gate reference table (constructors, captions, matrices, QASM mnemonics), see [[gate-zoo]].
+- To add a new rotation gate, see [[how-to-add-a-new-gate]].
 
 ## Sources
 

@@ -134,6 +134,7 @@ qasm := p.ToQASM()
 - `ExpectedGHZState(n)` always has 1/√2 at index 0 and 1/√2 at index 2ⁿ−1, zeros everywhere else.
 - `GetExpectedStateVector` returns an error for "grover" regardless of n — the second arg is unused.
 - QASM export for Oracle and ControlledGate produces comments, not valid QASM — these gates have no standard QASM representation.
+- The constructor, caption, and QASM mnemonic for every gate used in these circuits is catalogued in [[gate-zoo]].
 
 ## Sources
 
