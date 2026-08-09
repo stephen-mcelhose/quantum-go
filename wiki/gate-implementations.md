@@ -113,6 +113,8 @@ All other gates fall to the general matrix-vector multiply path.
 - Measurement's matrix is identity — measurement is handled by the engine post-execution.
 - Fredkin (CSWAP) is the controlled-SWAP — useful for sorting networks on qubits.
 - See [[rotation-implementations]] for parameterized gates (Rx/Ry/Rz/U/S/T/V/CR/PhaseShift).
+- For the complete gate reference table (constructors, captions, matrices, QASM mnemonics for every gate), see [[gate-zoo]].
+- To add a new gate type, see [[how-to-add-a-new-gate]].
 
 ## Sources
 

@@ -118,6 +118,7 @@ The 1e-6 tolerance is chosen to be above float64 rounding (~1e-15) while below p
 - Fuzz tests in `local/fuzz_test.go` cover Toffoli, Fourier identity, and quantum addition.
 - `TestStepUnique` confirms the panic behavior for overlapping gates — a design-by-contract check.
 - Race detector (`-race`) is important if multi-circuit parallelism is added.
+- When adding a new gate, the required verification and matrix test pattern is documented in [[how-to-add-a-new-gate]].
 
 ## Sources
 
