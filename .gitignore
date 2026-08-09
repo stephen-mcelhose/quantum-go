@@ -4,6 +4,10 @@
 # Compiled binaries
 strange
 quantum-go
+wikigraph/wikigraph
+
+# Generated output
+wikigraph/wiki_graph.html
 
 # IDE / tool files
 .csgdaa-code/
