@@ -114,7 +114,7 @@ The 1e-6 tolerance is chosen to be above float64 rounding (~1e-15) while below p
 ## Key Points
 
 - `local/verification_test.go` is the most authoritative test file — it compares full state vectors for 15+ canonical circuits.
-- `res.GetProbability()` returns amplitudes (complex), not probabilities (real) — see [[simulation-engine]].
+- `res.GetProbability()` returns amplitudes (complex), not probabilities (real) — see [[state-vector-model]] for the naming explanation.
 - Fuzz tests in `local/fuzz_test.go` cover Toffoli, Fourier identity, and quantum addition.
 - `TestStepUnique` confirms the panic behavior for overlapping gates — a design-by-contract check.
 - Race detector (`-race`) is important if multi-circuit parallelism is added.

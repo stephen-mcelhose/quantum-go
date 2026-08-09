@@ -107,13 +107,12 @@ Then add it to the `tests` slice in `TestVerifyStandardStates`. The framework ha
 
 ## Key Points
 
-- `res.GetProbability()` returns amplitudes, not probabilities — divide by |·|² for actual probability.
+- `res.GetProbability()` returns amplitudes, not probabilities — divide by |·|² for actual probability. See [[state-vector-model]] for the full naming history.
 - All expected amplitudes must be normalized (sum of squares = 1).
 - Tolerance 1e-6 is tight enough to catch gate implementation bugs but forgiving of float64 rounding.
 - Toffoli and Fredkin tests use little-endian index encoding — verify index arithmetic when debugging.
 - The `Superdense Coding` test exercises `core.NewSuperdenseCodingProgram()` — a built-in program helper from [[circuits-library]].
 - Adding new gates → add a verification test case here first, then implement the gate. The full gate addition workflow is in [[how-to-add-a-new-gate]].
-- `res.GetProbability()` is misnamed — it returns complex amplitudes from the [[simulation-engine]], not probabilities. Probability of state i = |amplitude[i]|².
 - For the broader test suite context see [[testing-strategy]]; for randomised property tests see [[fuzz-testing]].
 
 ## Sources

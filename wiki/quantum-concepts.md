@@ -104,7 +104,7 @@ Full matrix forms are in [[rotation-implementations]].
 | QFT (Fourier) | H + CR gates      | Rotates Z↔Phase basis; the interference engine for Shor's |
 | Adder (Add)   | QFT + CR gates    | \|x,y⟩→\|x,x+y⟩ in phase space                     |
 
-Implementations in [[composite-gates]] and [[arithmetic-gates]]. Deep-dive in [[qft-deep-dive]].
+Implementations in [[composite-gates]] and [[arithmetic-gates]]. Deep-dive in [[qft-deep-dive]]. For the complete gate reference (every constructor, caption, matrix, and QASM mnemonic), see [[gate-zoo]].
 
 ## Key Points
 
