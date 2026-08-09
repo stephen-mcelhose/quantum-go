@@ -40,16 +40,16 @@ Available Gates:
 | cu1(θ)    | Controlled Rotation    | cu1(1.57) q[0], q[1]   |
 | measure   | Measurement            | measure q[0]           |`,
 	Example: `  # Verify built-in Bell state against math constants
-  strange verify --circuit bell --mode theoretical
+  quantum-go verify --circuit bell --mode theoretical
 
   # Verify built-in 3-qubit GHZ state
-  strange verify --circuit ghz -n 3 --mode theoretical
+  quantum-go verify --circuit ghz -n 3 --mode theoretical
 
   # Verify built-in 4-qubit QFT
-  strange verify --circuit qft -n 4 --mode theoretical
+  quantum-go verify --circuit qft -n 4 --mode theoretical
 
   # Verify custom circuit against Qiskit Aer
-  strange verify -n 2 -s "h q[0]" -s "u1(0.785398) q[0]" --mode qiskit`,
+  quantum-go verify -n 2 -s "h q[0]" -s "u1(0.785398) q[0]" --mode qiskit`,
 	Args: cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		var p *core.Program
@@ -165,7 +165,7 @@ Available Gates:
 func init() {
 	verifyCmd.Flags().StringVarP(&verifyMode, "mode", "m", "theoretical", "Verification mode (theoretical, qiskit, file)")
 	verifyCmd.Flags().StringVarP(&referenceFile, "reference", "r", "", "Reference JSON file (for mode=file)")
-	verifyCmd.Flags().StringVarP(&circuitName, "circuit", "c", "", "Built-in circuit to verify (use 'strange list circuits' for all options)")
+	verifyCmd.Flags().StringVarP(&circuitName, "circuit", "c", "", "Built-in circuit to verify (use 'quantum-go list circuits' for all options)")
 	verifyCmd.Flags().StringToStringVarP(&circuitParams, "param", "p", nil, "Parameters for built-in circuits")
 	verifyCmd.Flags().IntVarP(&numQubits, "qubits", "n", 2, "Number of qubits for the circuit")
 	verifyCmd.Flags().StringArrayVarP(&circuitSteps, "step", "s", []string{}, "Add a quantum gate to the circuit (e.g. \"h q[0]\")")

@@ -1,4 +1,4 @@
-# Learning Shor's Algorithm with Strange-Go
+# Learning Shor's Algorithm with quantum-go
 
 Shor's Algorithm is arguably the most famous quantum algorithm. Why? Because it has the potential to break the RSA encryption that secures almost all modern digital communication.
 
@@ -122,21 +122,21 @@ go test -v ./go/examples/algorithms/shor_test.go
 ```
 
 ### Experiment with the CLI
-Use the `strange` CLI tool to export and run the Shor circuit:
+Use the `quantum-go` CLI tool to export and run the Shor circuit:
 
 **Export to QASM:**
 ```bash
-./strange export --circuit shor
+./quantum-go export --circuit shor
 ```
 
 **Run the simulation:**
 ```bash
-./strange run --circuit shor
+./quantum-go run --circuit shor
 ```
 
 **Analyze the circuit:**
 ```bash
-./strange inspect --circuit shor
+./quantum-go inspect --circuit shor
 ```
 
 ---

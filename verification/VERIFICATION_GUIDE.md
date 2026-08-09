@@ -1,12 +1,12 @@
 # Quick Verification Guide
 
-This guide shows how to verify Strange quantum operations against Qiskit.
+This guide shows how to verify quantum-go quantum operations against Qiskit.
 
 ## Verification Process Diagram
 
 ```mermaid
 graph TD
-    A[Start: Test Definition] --> B[Strange Execution]
+    A[Start: Test Definition] --> B[quantum-go Execution]
     A --> C[Qiskit Execution]
     
     B --> D[Parse Gates]
@@ -47,8 +47,8 @@ python3 -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install qiskit qiskit-aer numpy
 
-# 2. Build Strange CLI (if not already built)
-cd go && go build -o strange ./cmd/strange && cd ..
+# 2. Build quantum-go CLI (if not already built)
+cd go && go build -o quantum-go ./cmd/quantum-go && cd ..
 
 # 3. Run verification
 python3 verify_against_qiskit.py
@@ -77,12 +77,12 @@ The script automatically verifies 38 quantum operations including:
 
 ```
 ======================================================================
- STRANGE vs QISKIT VERIFICATION SUITE
+ quantum-go vs QISKIT VERIFICATION SUITE
 ======================================================================
 
 Test: Single Qubit Superposition (H on q[0])
 ------------------------------------------------------------
-State      Strange      Qiskit       Diff         Match
+State      quantum-go   Qiskit       Diff         Match
 |0>            0.5000       0.5000     0.000000   ✓
 |1>            0.5000       0.5000     0.000000   ✓
 
@@ -99,9 +99,9 @@ Overall Result: PASS ✓
 
 You can also manually compare operations:
 
-### Strange CLI
+### quantum-go CLI
 ```bash
-./go/strange run -n 1 -s "h q[0]"
+./go/quantum-go run -n 1 -s "h q[0]"
 ```
 
 ### Qiskit (Python)
@@ -131,14 +131,14 @@ Edit `verify_against_qiskit.py` and add to the `tests` array:
 {
     "name": "My Custom Test",
     "num_qubits": 2,
-    "strange_gates": "h q[0]; cx q[0] q[1]",  # Strange syntax
+    "quantum_go_gates": "h q[0]; cx q[0] q[1]",  # quantum-go syntax
     "qiskit_gates": [("h", [0]), ("cx", [0, 1])]  # Qiskit gates
 }
 ```
 
 ### Supported Gates
 
-| Gate | Strange Syntax | Qiskit Name | Description |
+| Gate | quantum-go Syntax | Qiskit Name | Description |
 |------|---------------|-------------|-------------|
 | Hadamard | `h q[0]` | `h` | Superposition |
 | Pauli-X | `x q[0]` | `x` | NOT gate |
@@ -150,9 +150,9 @@ Edit `verify_against_qiskit.py` and add to the `tests` array:
 
 ## Troubleshooting
 
-### Strange executable not found
+### quantum-go executable not found
 ```bash
-cd go && go build -o strange ./cmd/strange && cd ..
+cd go && go build -o quantum-go ./cmd/quantum-go && cd ..
 ```
 
 ### Python packages missing
@@ -161,7 +161,7 @@ pip install qiskit qiskit-aer numpy
 ```
 
 ### Different results
-- Check Strange CLI is latest version
+- Check quantum-go CLI is latest version
 - Verify gate syntax matches documentation
 - Report issue with specific test case
 
@@ -175,4 +175,4 @@ All fundamental and advanced quantum operations verified against IBM Qiskit.
 
 - **Detailed Report:** See `QISKIT_VERIFICATION_REPORT.md`
 - **Learning Transcript:** See `quantum-learning-session-transcript.md`
-- **Strange Documentation:** See `go/README.md`
+- **quantum-go Documentation:** See `go/README.md`

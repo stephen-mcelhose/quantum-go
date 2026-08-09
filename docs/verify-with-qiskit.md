@@ -1,4 +1,4 @@
-# Verifying Strange-Go with Qiskit Aer
+# Verifying quantum-go with Qiskit Aer
 
 This guide explains how to use [Qiskit Aer](https://qiskit.org/ecosystem/aer/) to verify the state vectors produced by `quantum-go`.
 
@@ -9,7 +9,7 @@ This guide explains how to use [Qiskit Aer](https://qiskit.org/ecosystem/aer/) t
 
 ## Verification Workflow
 
-### 1. Export Circuit from Strange-Go
+### 1. Export Circuit from quantum-go
 Generate the OpenQASM 2.0 representation of your circuit in Go:
 
 ```go
@@ -39,9 +39,9 @@ print(statevector.data)
 ```
 
 ### 3. Compare State Vectors
-Strange-Go and Qiskit both use **Little-Endian** qubit ordering, meaning the indices in the state vector match exactly.
+quantum-go and Qiskit both use **Little-Endian** qubit ordering, meaning the indices in the state vector match exactly.
 
-- **Strange-Go**: `result.GetProbability()` returns a `[]complex128`.
+- **quantum-go**: `result.GetProbability()` returns a `[]complex128`.
 - **Qiskit**: `statevector.data` is a numpy array of complex numbers.
 
 Compare the amplitudes at each index. They should match within a tolerance of $10^{-6}$.

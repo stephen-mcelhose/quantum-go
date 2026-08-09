@@ -1,4 +1,4 @@
-# Strange-Go Pedagogical Documentation Standards
+# quantum-go Pedagogical Documentation Standards
 
 This document codifies the rubric and standards for creating pedagogical learning aids (Markdown guides) for quantum algorithms and fundamental concepts in the `quantum-go` simulator.
 
@@ -11,7 +11,7 @@ Each learning aid (e.g., `shor.md`, `grover.md`) MUST follow this structure:
 
 ### 1. Title
 A clear, action-oriented title.
-*Example: Learning Grover's Algorithm with Strange-Go*
+*Example: Learning Grover's Algorithm with quantum-go*
 
 ### 2. Introduction (The Challenge)
 *   **Metaphor**: Use a real-world analogy (e.g., "needle in a haystack" for Grover's).
@@ -40,9 +40,9 @@ Explain how to read the output of the simulation.
 3-5 multiple-choice or short-answer questions to help the learner verify their conceptual understanding.
 
 ### 7. Hands-on Exploration
-Direct the user to run the example and provide CLI tool calls using the `strange` utility.
+Direct the user to run the example and provide CLI tool calls using the `quantum-go` utility.
 *   **Run the Example**: Specific command to run the Go test or example (e.g., `go test -v ./go/examples/...`).
-*   **CLI Commands**: Show how to use the `strange` CLI tool to `export`, `run`, or `analyze` the circuit described in the guide.
+*   **CLI Commands**: Show how to use the `quantum-go` CLI tool to `export`, `run`, or `analyze` the circuit described in the guide.
 
 ### 8. References & Further Reading
 A list of **verified** web-accessible resources. 

@@ -1,4 +1,4 @@
-# Learning Entanglement with Strange-Go
+# Learning Entanglement with quantum-go
 
 Quantum Entanglement is a physical phenomenon where pairs or groups of particles are generated, interact, or share spatial proximity in such a way that the quantum state of each particle cannot be described independently of the state of the others.
 
@@ -117,21 +117,21 @@ go test -v ./go/examples/entanglement/...
 ```
 
 ### Experiment with the CLI
-Use the `strange` CLI tool to export and analyze the built-in entangled circuits:
+Use the `quantum-go` CLI tool to export and analyze the built-in entangled circuits:
 
 **Export the Bell State:**
 ```bash
-./strange export --circuit bell
+./quantum-go export --circuit bell
 ```
 
 **Run the GHZ state simulation:**
 ```bash
-./strange run --circuit ghz -n 3
+./quantum-go run --circuit ghz -n 3
 ```
 
 **Analyze the entropy of the GHZ state (S > 0 indicates entanglement):**
 ```bash
-./strange analyze --circuit ghz -n 3
+./quantum-go analyze --circuit ghz -n 3
 ```
 
 ---

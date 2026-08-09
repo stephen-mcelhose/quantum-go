@@ -25,7 +25,7 @@ func Example_adder() {
 
 	// Step 3: Apply Add gate
 	// x0=0, x1=1, y0=2, y1=4
-	// In Strange, the Add gate result is stored in the first register (x).
+		// In the original Strange Java simulator, the Add gate result is stored in the first register (x).
 	// So x will become (x+y) mod 2^m.
 	// Since x has 2 bits (m=2), it will be (2+3) mod 4 = 1.
 	// Register y (3 qubits) remains unchanged (3).

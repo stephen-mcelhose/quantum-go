@@ -1,10 +1,10 @@
-# Research Report: Strange Go Port Roadmap & Future Enhancements
+# Research Report: quantum-go Port Roadmap & Future Enhancements
 
 ## Summary
-The current state of the `strange` Go port is stable and functionally rich, covering fundamental quantum gates, complex algorithmic blocks (QFT, Adder), and several built-in quantum algorithms. This report outlines a roadmap for future enhancements to transition the simulator from a basic port to a feature-complete quantum development tool.
+The current state of the `quantum-go` Go port is stable and functionally rich, covering fundamental quantum gates, complex algorithmic blocks (QFT, Adder), and several built-in quantum algorithms. This report outlines a roadmap for future enhancements to transition the simulator from a basic port to a feature-complete quantum development tool.
 
 ## 1. Algorithmic Roadmap
-Several high-value algorithms from the original Strange ecosystem and broader quantum computing literature are recommended for implementation:
+Several high-value algorithms from the original Strange Java simulator ecosystem and broader quantum computing literature are recommended for implementation:
 
 - **Simon's Algorithm**: A key precursor to Shor's algorithm that demonstrates an exponential speedup.
 - **Quantum Phase Estimation (QPE)**: A fundamental building block for Shor's and many other algorithms.
@@ -13,9 +13,9 @@ Several high-value algorithms from the original Strange ecosystem and broader qu
 ## 2. CLI & User Experience
 The discovery commands (`list circuits`, `list gates`) have significantly improved the UX. Further enhancements include:
 
-- **ASCII Circuit Drawing**: Implementing a `strange draw` command to visualize circuits. The `core.Program` structure (ordered steps of disjoint gates) is perfectly suited for a grid-based ASCII renderer.
+- **ASCII Circuit Drawing**: Implementing a `quantum-go draw` command to visualize circuits. The `core.Program` structure (ordered steps of disjoint gates) is perfectly suited for a grid-based ASCII renderer.
 - **Enhanced QASM Support**: Extending the `qasm` parser to support the algorithmic gates already present in `core` (e.g., `qft q[0], q[1], q[2]`).
-- **Intermediate State Inspection**: Adding an `--inspect-steps` flag to `strange run` to display state vector transitions between steps.
+- **Intermediate State Inspection**: Adding an `--inspect-steps` flag to `quantum-go run` to display state vector transitions between steps.
 
 ## 3. Advanced Physics & Thermodynamics
 Building on the existing thermodynamic capabilities:

@@ -1,4 +1,4 @@
-# Strange Quantum Simulator - Go Implementation
+# quantum-go - Go Implementation
 
 A high-performance quantum circuit simulator written in Go, ported from the [Strange](https://github.com/redfx-quantum/strange) Java implementation.
 
@@ -8,12 +8,12 @@ This is a complete quantum simulator that allows you to construct and execute qu
 
 ## CLI Tool
 
-The project includes a command-line tool named `strange` for running and analyzing quantum circuits.
+The project includes a command-line tool named `quantum-go` for running and analyzing quantum circuits.
 
 ### Installation
 
 ```bash
-go build -o strange ./cmd/strange/main.go
+go build -o quantum-go ./cmd/quantum-go/main.go
 ```
 
 #### Verification Environment (Optional)
@@ -33,37 +33,37 @@ pip install qiskit qiskit-aer
 	
 	```bash
 	# List all built-in quantum circuits
-	./strange list circuits
+	./quantum-go list circuits
 
 	# List all supported quantum gates
-	./strange list gates
+	./quantum-go list gates
 
-	# Run a built-in circuit (use 'strange list circuits' to see options)
-		./strange run --circuit deutsch-jozsa
+	# Run a built-in circuit (use 'quantum-go list circuits' to see options)
+		./quantum-go run --circuit deutsch-jozsa
 
 		# Run a built-in circuit with parameters
-		./strange run --circuit bernstein-vazirani -p s=1011
-		./strange run --circuit simon -p s=11
+		./quantum-go run --circuit bernstein-vazirani -p s=1011
+		./quantum-go run --circuit simon -p s=11
 
 	# Run a custom 2-qubit circuit built via flags
 
-./strange run -n 2 -s "h q[0]" -s "cx q[0], q[1]"
+./quantum-go run -n 2 -s "h q[0]" -s "cx q[0], q[1]"
 
 # Run a QASM file
-./strange run circuit.qasm
+./quantum-go run circuit.qasm
 
 # Analyze thermodynamic properties (Entropy, Energy)
-./strange analyze --circuit grover
+./quantum-go analyze --circuit grover
 
 # Inspect circuit metadata and gate count
-./strange inspect --circuit teleportation
+./quantum-go inspect --circuit teleportation
 
 # Export a built-in circuit to QASM
-./strange export --circuit bell > bell.qasm
+./quantum-go export --circuit bell > bell.qasm
 
 # Verify circuit calculation against reference
-./strange verify --circuit bell --mode theoretical
-./strange verify --circuit qft --mode qiskit
+./quantum-go verify --circuit bell --mode theoretical
+./quantum-go verify --circuit qft --mode qiskit
 ```
 
 ## Package Structure
@@ -134,7 +134,7 @@ func main() {
 For a complete and up-to-date list of all supported quantum gates, use the CLI:
 
 ```bash
-./strange list gates
+./quantum-go list gates
 ```
 
 The simulator supports a wide range of gates, including:

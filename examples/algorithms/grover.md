@@ -1,4 +1,4 @@
-# Learning Grover's Algorithm with Strange-Go
+# Learning Grover's Algorithm with quantum-go
 
 Grover's Algorithm is a fundamental quantum algorithm that provides a **quadratic speedup** for unstructured search problems. If you're looking for a \"needle in a haystack,\" Grover's is your quantum magnet.
 
@@ -162,21 +162,21 @@ go test -v ./go/examples/algorithms/grover_test.go
 ```
 
 ### Experiment with the CLI
-Use the `strange` CLI tool to export and run the built-in 2-qubit Grover circuit:
+Use the `quantum-go` CLI tool to export and run the built-in 2-qubit Grover circuit:
 
 **Export to QASM:**
 ```bash
-./strange export --circuit grover
+./quantum-go export --circuit grover
 ```
 
 **Run the simulation:**
 ```bash
-./strange run --circuit grover
+./quantum-go run --circuit grover
 ```
 
 **Analyze the entanglement:**
 ```bash
-./strange analyze --circuit grover
+./quantum-go analyze --circuit grover
 ```
 
 ---

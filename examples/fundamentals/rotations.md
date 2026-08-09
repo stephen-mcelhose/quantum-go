@@ -12,7 +12,7 @@ where:
 
 ## 2. Rotation Gates (Rx, Ry, Rz)
 
-Strange-Go provides three primary rotation gates, each corresponding to a rotation around one of the principal axes of the Bloch Sphere.
+quantum-go provides three primary rotation gates, each corresponding to a rotation around one of the principal axes of the Bloch Sphere.
 
 ### Rx: Rotation around the X-axis
 $$Rx(\theta) = \begin{pmatrix} \cos(\theta/2) & -i\sin(\theta/2) \\ -i\sin(\theta/2) & \cos(\theta/2) \end{pmatrix}$$
@@ -29,7 +29,7 @@ $$Rz(\theta) = \begin{pmatrix} e^{-i\theta/2} & 0 \\ 0 & e^{i\theta/2} \end{pmat
 - **Effect**: Rotates the state vector around the Z-axis, changing the relative phase between $|0\rangle$ and $|1\rangle$.
 - **Identity**: $Rz(\pi)$ is equivalent to the Pauli-Z gate (up to a global phase).
 
-## 3. Practical Usage in Strange-Go
+## 3. Practical Usage in quantum-go
 
 You can use these gates to prepare specific states or as part of variational algorithms (like VQE).
 

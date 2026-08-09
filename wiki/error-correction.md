@@ -91,7 +91,7 @@ result := env.RunProgram(program)
 result.PrintBinary()
 ```
 
-The CLI: `./strange run --circuit error-correction -p bit=1`
+The CLI: `./quantum-go run --circuit error-correction -p bit=1`
 
 ## Key Points
 

@@ -1,6 +1,6 @@
 # Complete Test Suite - All Examples from CLI Help
 
-This document lists all 38 test cases in the verification suite, including examples from every Strange CLI subcommand.
+This document lists all 38 test cases in the verification suite, including examples from every quantum-go CLI subcommand.
 
 ## Test Suite Breakdown
 
@@ -29,7 +29,7 @@ From the original quantum learning session:
 
 ### Category 2: CLI Basic Gate Examples (7 tests)
 
-From `strange -h` and `strange run -h`:
+From `quantum-go -h` and `quantum-go run -h`:
 
 19. **Identity gate** - `id q[0]`
 20. **CNOT gate** - `cx q[0], q[1]`
@@ -43,12 +43,12 @@ From `strange -h` and `strange run -h`:
 
 From various CLI subcommand examples:
 
-26. **Bell state** - `h q[0]; cx q[0], q[1]` (from `strange run`)
-27. **3-qubit GHZ** - `h q[0]; cx q[0], q[1]; cx q[1], q[2]` (from `strange inspect`)
-28. **Custom GHZ** - Same as above (from `strange export`)
-29. **H + Phase rotation** - `h q[0]; u1(0.785398) q[0]` (from `strange verify`)
-30. **Analyze Bell** - `h q[0]; cx q[0], q[1]` (from `strange analyze`)
-31. **Analyze GHZ** - `h q[0]; cx q[0], q[1]; cx q[1], q[2]` (from `strange analyze`)
+26. **Bell state** - `h q[0]; cx q[0], q[1]` (from `quantum-go run`)
+27. **3-qubit GHZ** - `h q[0]; cx q[0], q[1]; cx q[1], q[2]` (from `quantum-go inspect`)
+28. **Custom GHZ** - Same as above (from `quantum-go export`)
+29. **H + Phase rotation** - `h q[0]; u1(0.785398) q[0]` (from `quantum-go verify`)
+30. **Analyze Bell** - `h q[0]; cx q[0], q[1]` (from `quantum-go analyze`)
+31. **Analyze GHZ** - `h q[0]; cx q[0], q[1]; cx q[1], q[2]` (from `quantum-go analyze`)
 
 ### Category 4: Advanced Combinations (7 tests)
 
@@ -116,7 +116,7 @@ All gates documented in CLI help are tested:
 
 ```
 ======================================================================
- STRANGE vs QISKIT VERIFICATION SUITE
+ quantum-go vs QISKIT VERIFICATION SUITE
  Includes: Learning Transcript + CLI Help Examples
 ======================================================================
 
@@ -136,10 +136,10 @@ Success Rate: 100.0%
 # Full suite (38 tests)
 python3 verify_against_qiskit.py
 
-# Run Strange CLI examples manually
-./go/strange run -n 2 -s "h q[0]" -s "cx q[0], q[1]"
-./go/strange verify --circuit bell --mode theoretical
-./go/strange analyze --circuit ghz -n 3
+# Run quantum-go CLI examples manually
+./go/quantum-go run -n 2 -s "h q[0]" -s "cx q[0], q[1]"
+./go/quantum-go verify --circuit bell --mode theoretical
+./go/quantum-go analyze --circuit ghz -n 3
 ```
 
 ---
@@ -152,7 +152,7 @@ To add new test cases, edit `verify_against_qiskit.py`:
 {
     "name": "Your Test Name",
     "num_qubits": 2,
-    "strange_gates": "h q[0]; cx q[0], q[1]",
+    "quantum_go_gates": "h q[0]; cx q[0], q[1]",
     "qiskit_gates": [("h", [0]), ("cx", [0, 1])]
 }
 ```
@@ -162,7 +162,7 @@ For parameterized gates:
 {
     "name": "Phase Gate Test",
     "num_qubits": 1,
-    "strange_gates": "u1(1.5708) q[0]",  # π/2
+    "quantum_go_gates": "u1(1.5708) q[0]",  # π/2
     "qiskit_gates": [("u1", [0], 1.5708)]
 }
 ```
@@ -173,15 +173,15 @@ For parameterized gates:
 
 All examples from these commands are now verified:
 
-- ✅ `strange -h` - Main help examples
-- ✅ `strange run -h` - Run examples (Bell, Shor, etc.)
-- ✅ `strange verify -h` - Verification examples
-- ✅ `strange inspect -h` - Inspection examples
-- ✅ `strange export -h` - Export examples
-- ✅ `strange analyze -h` - Analysis examples
+- ✅ `quantum-go -h` - Main help examples
+- ✅ `quantum-go run -h` - Run examples (Bell, Shor, etc.)
+- ✅ `quantum-go verify -h` - Verification examples
+- ✅ `quantum-go inspect -h` - Inspection examples
+- ✅ `quantum-go export -h` - Export examples
+- ✅ `quantum-go analyze -h` - Analysis examples
 
 ---
 
 **Generated:** January 19, 2026  
-**Framework:** Strange (Go) vs Qiskit (Python)  
+**Framework:** quantum-go vs Qiskit (Python)  
 **Status:** ✅ All examples verified

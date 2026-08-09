@@ -1,11 +1,11 @@
-# Verifying Strange-Go with IBM Quantum Platform
+# Verifying quantum-go with IBM Quantum Platform
 
 This guide explains how to use the [IBM Quantum Platform](https://quantum.ibm.com/) for cloud-based verification and visualization of `quantum-go` circuits.
 
 ## Verification Workflow
 
 ### 1. Export Circuit to OpenQASM
-In Strange-Go, generate the QASM 2.0 string for your circuit:
+In quantum-go, generate the QASM 2.0 string for your circuit:
 
 ```go
 fmt.Println(program.ToQASM())
@@ -20,7 +20,7 @@ The Composer is useful for visual inspection of small circuits.
 5.  Check the **"State Vector"** or **"Probabilities"** panels at the bottom.
 
 > [!IMPORTANT]
-> **Endianness Warning**: The IBM Quantum Composer visualization displays qubits in **Big-Endian** order (Qubit 0 is the Most Significant Bit) in the state labels (e.g., $|q_n...q_0\rangle$). Strange-Go and Qiskit use **Little-Endian**. Be careful to flip the labels mentally when comparing bitstrings.
+> **Endianness Warning**: The IBM Quantum Composer visualization displays qubits in **Big-Endian** order (Qubit 0 is the Most Significant Bit) in the state labels (e.g., $|q_n...q_0\rangle$). quantum-go and Qiskit use **Little-Endian**. Be careful to flip the labels mentally when comparing bitstrings.
 
 ### 3. Use IBM Quantum Lab (Jupyter)
 For precise numerical comparison of larger circuits:

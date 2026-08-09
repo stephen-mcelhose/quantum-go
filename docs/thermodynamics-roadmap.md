@@ -7,7 +7,7 @@ updated_at: "2026-01-18T18:51:28.298Z"
 ---
 title: "Implementation Plan: Result Interface Refactoring and Quantum Thermodynamics Roadmap"
 mode: "plan"
-workspace: "/Users/stephen.mcelhose.ext/repos/strange"
+workspace: "/Users/stephen.mcelhose.ext/repos/quantum-go"
 created_at: "2026-01-18T18:45:00.000Z"
 sources: ["h2i1gdh8zrp", "rpq36csz2r8", "kwpd7pl645r"]
 ---

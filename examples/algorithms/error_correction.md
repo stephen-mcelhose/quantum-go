@@ -4,15 +4,15 @@ Quantum computers are highly sensitive to noise. Unlike classical bits, quantum 
 
 The **3-qubit bit-flip code** is the simplest error-correcting code. It can detect and correct a single bit-flip error ($X$ gate) on any one of the three qubits.
 
-## Implementation in Strange
+## Implementation in quantum-go
 
-The "Strange" simulator includes a built-in demonstration of this code.
+The quantum-go simulator includes a built-in demonstration of this code.
 
 ### Usage via CLI
 
 ```bash
 # Encode bit 1, simulate an error, and correct it
-./strange run --circuit error-correction -p bit=1
+./quantum-go run --circuit error-correction -p bit=1
 ```
 
 Even though the circuit simulates an $X$ error on one of the qubits, the final measurement will reliably show the original bit.

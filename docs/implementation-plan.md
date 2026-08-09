@@ -1,4 +1,4 @@
-# Implementation Plan: Strange Simulator Go Port
+# Implementation Plan: quantum-go Go Port
 
 The port is executed in three logical phases to ensure stability and verifiability.
 

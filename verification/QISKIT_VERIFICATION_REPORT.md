@@ -1,4 +1,4 @@
-# Qiskit Verification Report for Strange Quantum Simulator
+# Qiskit Verification Report for quantum-go
 
 **Date:** January 19, 2026  
 **Verifier:** Automated Test Suite  
@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-Strange quantum simulator was comprehensively tested against IBM's Qiskit framework. All 55 test cases passed with perfect accuracy, demonstrating that Strange correctly implements fundamental quantum operations, including rotation gates, phase gates, and universal gates, according to the mathematical principles of quantum mechanics.
+quantum-go was comprehensively tested against IBM's Qiskit framework. All 55 test cases passed with perfect accuracy, demonstrating that quantum-go correctly implements fundamental quantum operations, including rotation gates, phase gates, and universal gates, according to the mathematical principles of quantum mechanics.
 
 **Results:** ✅ 55/55 Tests Passed (100% Success Rate)
 
@@ -22,14 +22,14 @@ Strange quantum simulator was comprehensively tested against IBM's Qiskit framew
 ```mermaid
 sequenceDiagram
     participant Test as Test Suite
-    participant Strange as Strange CLI
+    participant QuantumGo as quantum-go CLI
     participant Qiskit as Qiskit Simulator
     participant Compare as Comparator
     
-    Test->>Strange: Execute Circuit
-    Strange->>Strange: Apply Gates
-    Strange->>Strange: Calculate State Vector
-    Strange-->>Test: Return Probabilities
+    Test->>QuantumGo: Execute Circuit
+    QuantumGo->>QuantumGo: Apply Gates
+    QuantumGo->>QuantumGo: Calculate State Vector
+    QuantumGo-->>Test: Return Probabilities
     
     Test->>Qiskit: Execute Same Circuit
     Qiskit->>Qiskit: Apply Gates
@@ -52,7 +52,7 @@ flowchart LR
         TC[Test Cases<br/>55 circuits]
     end
     
-    subgraph Strange [Strange Simulator]
+    subgraph QuantumGo [quantum-go]
         SG[Gate Parser]
         SE[Quantum Engine]
         SSV[State Vector]
@@ -70,7 +70,7 @@ flowchart LR
         RESULT[Test Result]
     end
     
-    TC --> Strange
+    TC --> QuantumGo
     TC --> Qiskit
     
     SG --> SE --> SSV
@@ -84,13 +84,13 @@ flowchart LR
     TOL -->|No| RESULT
     
     style TC fill:#e1f5ff
-    style Strange fill:#fff4e1
+    style QuantumGo fill:#fff4e1
     style Qiskit fill:#e1ffe1
     style COMP fill:#ffe1f5
     style RESULT fill:#d4edda
 ```
 
-1. **Dual Execution**: Each quantum circuit was run in both Strange and Qiskit
+1. **Dual Execution**: Each quantum circuit was run in both quantum-go and Qiskit
 2. **State Vector Comparison**: Probability distributions were extracted from both simulators
 3. **Numerical Precision**: Results compared within tolerance of 0.0001 (0.01%)
 4. **Comprehensive Coverage**: Tests span all operations from beginner learning transcript
@@ -118,7 +118,7 @@ The verification suite covers:
 **Operation:** `H |0⟩`  
 **Expected:** Equal superposition of |0⟩ and |1⟩
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|0⟩  | 0.5000  | 0.5000 | 0.000000   | ✅ PASS |
 | \|1⟩  | 0.5000  | 0.5000 | 0.000000   | ✅ PASS |
@@ -129,7 +129,7 @@ The verification suite covers:
 **Operation:** `H⊗H |00⟩`  
 **Expected:** Equal superposition of all 4 basis states
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|00⟩ | 0.2500  | 0.2500 | 0.000000   | ✅ PASS |
 | \|01⟩ | 0.2500  | 0.2500 | 0.000000   | ✅ PASS |
@@ -142,7 +142,7 @@ The verification suite covers:
 **Operation:** `H⊗H⊗H |000⟩`  
 **Expected:** Equal superposition of all 8 basis states (12.5% each)
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|000⟩| 0.1250  | 0.1250 | 0.000000   | ✅ PASS |
 | \|001⟩| 0.1250  | 0.1250 | 0.000000   | ✅ PASS |
@@ -163,7 +163,7 @@ The verification suite covers:
 **Operation:** `H_0 |000⟩`  
 **Expected:** Only rightmost bit varies
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|000⟩| 0.5000  | 0.5000 | 0.000000   | ✅ PASS |
 | \|001⟩| 0.5000  | 0.5000 | 0.000000   | ✅ PASS |
@@ -174,7 +174,7 @@ The verification suite covers:
 **Operation:** `H_0 H_2 |000⟩`  
 **Expected:** Middle bit stays 0, outer bits vary
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|000⟩| 0.2500  | 0.2500 | 0.000000   | ✅ PASS |
 | \|001⟩| 0.2500  | 0.2500 | 0.000000   | ✅ PASS |
@@ -187,7 +187,7 @@ The verification suite covers:
 **Operation:** `H_1 |000⟩`  
 **Expected:** Only middle bit varies
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|000⟩| 0.5000  | 0.5000 | 0.000000   | ✅ PASS |
 | \|010⟩| 0.5000  | 0.5000 | 0.000000   | ✅ PASS |
@@ -202,7 +202,7 @@ The verification suite covers:
 **Operation:** `H H |0⟩`  
 **Expected:** Return to |0⟩
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|0⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -212,7 +212,7 @@ The verification suite covers:
 **Operation:** `X |0⟩`  
 **Expected:** Flip to |1⟩
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|1⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -222,7 +222,7 @@ The verification suite covers:
 **Operation:** `X X |0⟩`  
 **Expected:** Flip twice returns to |0⟩
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|0⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -236,7 +236,7 @@ The verification suite covers:
 **Operation:** `Z |0⟩`  
 **Expected:** No visible change (phase is global)
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|0⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -246,7 +246,7 @@ The verification suite covers:
 **Operation:** `H Z H |0⟩`  
 **Expected:** Transform |0⟩ to |1⟩ via basis change
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|1⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -260,7 +260,7 @@ The verification suite covers:
 **Operation:** `Y |0⟩`  
 **Expected:** Flip to |1⟩ with phase
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|1⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -270,7 +270,7 @@ The verification suite covers:
 **Operation:** `Y Y |0⟩`  
 **Expected:** Return to |0⟩
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|0⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -284,7 +284,7 @@ The verification suite covers:
 **Operation:** `X Z |0⟩`  
 **Expected:** |1⟩ with phase
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|1⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -292,7 +292,7 @@ The verification suite covers:
 **Operation:** `Z X |0⟩`  
 **Expected:** |1⟩ (different global phase)
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|1⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -302,7 +302,7 @@ The verification suite covers:
 **Operation:** `H X H |0⟩`  
 **Expected:** Return to |0⟩ (equivalent to Z on |0⟩)
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|0⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -312,7 +312,7 @@ The verification suite covers:
 **Operation:** `H Z H |0⟩`  
 **Expected:** Flip to |1⟩ (equivalent to X on |0⟩)
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|1⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -322,7 +322,7 @@ The verification suite covers:
 **Operation:** `X Y Z |0⟩`  
 **Expected:** Return to |0⟩ (with global phase)
 
-| State | Strange | Qiskit | Difference | Result |
+| State | quantum-go | Qiskit | Difference | Result |
 |-------|---------|--------|------------|--------|
 | \|0⟩  | 1.0000  | 1.0000 | 0.000000   | ✅ PASS |
 
@@ -341,7 +341,7 @@ All probability values matched to at least 4 decimal places (0.0001 precision):
 
 ### Gate Implementation Quality
 
-Strange correctly implements:
+quantum-go correctly implements:
 1. **Matrix Operations**: All gates apply correct unitary transformations
 2. **Phase Tracking**: Complex phases handled accurately (verified via interference)
 3. **Tensor Products**: Multi-qubit operations scale correctly
@@ -349,7 +349,7 @@ Strange correctly implements:
 
 ### Qubit Indexing
 
-Verified that Strange uses little-endian qubit ordering:
+Verified that quantum-go uses little-endian qubit ordering:
 - q[0] is the rightmost (least significant) bit
 - q[n-1] is the leftmost (most significant) bit
 - Matches Qiskit's convention
@@ -360,7 +360,7 @@ Verified that Strange uses little-endian qubit ordering:
 
 ### Certification
 
-✅ **Strange quantum simulator is VERIFIED** against IBM Qiskit for all fundamental quantum operations.
+✅ **quantum-go is VERIFIED** against IBM Qiskit for all fundamental quantum operations.
 
 ### Strengths Demonstrated
 
@@ -372,7 +372,7 @@ Verified that Strange uses little-endian qubit ordering:
 
 ### Reliability Assessment
 
-Strange is suitable for:
+quantum-go is suitable for:
 - ✅ Quantum computing education and learning
 - ✅ Algorithm prototyping and development
 - ✅ Verification of quantum circuits before hardware execution
@@ -394,7 +394,7 @@ Strange is suitable for:
 ### Prerequisites
 ```bash
 pip install qiskit qiskit-aer numpy
-cd go && go build -o strange ./cmd/strange
+cd go && go build -o quantum-go ./cmd/quantum-go
 ```
 
 ### Execute All Tests
@@ -416,7 +416,7 @@ Edit `verify_against_qiskit.py` and add to the `tests` list:
 {
     "name": "Your Test Name",
     "num_qubits": 2,
-    "strange_gates": "h q[0]; cx q[0] q[1]",
+    "quantum_go_gates": "h q[0]; cx q[0] q[1]",
     "qiskit_gates": [("h", [0]), ("cx", [0, 1])]
 }
 ```
@@ -427,6 +427,6 @@ Edit `verify_against_qiskit.py` and add to the `tests` list:
 **Last Verification:** January 19, 2026 (55/55 tests passed)  
 **Verification Status:** ✅ ALL TESTS PASSED  
 **Framework Versions:**
-- Strange: Latest (Go implementation)
+- quantum-go: Latest (Go implementation)
 - Qiskit: Latest (Python with Aer backend)
 - Python: 3.13.9

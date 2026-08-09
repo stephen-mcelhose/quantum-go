@@ -1,4 +1,4 @@
-# Quantum Thermodynamics in Strange-Go
+# Quantum Thermodynamics in quantum-go
 
 This document explains the thermodynamic capabilities of the `quantum-go` simulator, based on the research presented in [DOI 10.1126/sciadv.adw8462](https://www.science.org/doi/10.1126/sciadv.adw8462).
 
@@ -65,9 +65,9 @@ mutualInfo := math.MutualInformation(rho_total, 2, []int{0}, []int{1})
 relativeEnt := math.RelativeEntropy(rho_sub, rho_thermal)
 ```
 
-## CLI Analysis with `strange analyze`
+## CLI Analysis with `quantum-go analyze`
 
-The `strange analyze` command automates the extraction of thermodynamic observables from a quantum circuit.
+The `quantum-go analyze` command automates the extraction of thermodynamic observables from a quantum circuit.
 
 ### Mathematical Foundations
 

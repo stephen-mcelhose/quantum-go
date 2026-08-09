@@ -1,6 +1,6 @@
-// Package strange is a quantum computing simulator for Go.
+// Package quantum_go is a quantum computing simulator for Go.
 //
-// Strange is a port of the Java quantum simulator from https://github.com/redfx-quantum/strange,
+// quantum-go is a Go port of the Java quantum simulator from https://github.com/redfx-quantum/strange,
 // providing high-performance quantum circuit simulation on classical hardware.
 //
 // # Architecture
@@ -64,4 +64,4 @@
 //   - Block gates for composite operations (QFT, arithmetic)
 //
 // For more information, see the documentation in individual packages.
-package strange
+package quantum_go

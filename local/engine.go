@@ -38,7 +38,7 @@ func (e *SimpleExecutionEnvironment) RunProgram(p *core.Program) core.Result {
 	for i := 0; i < size; i++ {
 		state[i] = 1.0
 		for j := 0; j < p.NumQubits; j++ {
-			// In Strange, InitAlpha[j] corresponds to qubit j.
+			// In the original Strange Java simulator, InitAlpha[j] corresponds to qubit j.
 			// Bit j in index i determines if we use alpha or beta.
 			if (i>>j)&1 == 0 {
 				state[i] *= complex(p.InitAlpha[j], 0)

@@ -18,22 +18,22 @@ var runCmd = &cobra.Command{
 	Short: "Run a quantum circuit",
 	Long: `Run a quantum circuit from a QASM file or build it using the --step flag.
 
-Use 'strange list circuits' to see all available built-in circuits.
-Use 'strange list gates' to see all supported gates.`,
+Use 'quantum-go list circuits' to see all available built-in circuits.
+Use 'quantum-go list gates' to see all supported gates.`,
 		Example: `  # List all built-in circuits
-  strange list circuits
+  quantum-go list circuits
 
   # List all supported gates
-  strange list gates
+  quantum-go list gates
 
   # Run built-in Bell state
-  strange run --circuit bell
+  quantum-go run --circuit bell
 
   # Run built-in Bernstein-Vazirani with custom hidden string
-  strange run --circuit bernstein-vazirani -p s=101
+  quantum-go run --circuit bernstein-vazirani -p s=101
 
   # Run built-in Shor's algorithm for 15
-  strange run --circuit shor -p mod=15,a=7,precision=8`,
+  quantum-go run --circuit shor -p mod=15,a=7,precision=8`,
 	Args: cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		var p *core.Program
@@ -84,7 +84,7 @@ Use 'strange list gates' to see all supported gates.`,
 
 func init() {
 	runCmd.Flags().BoolVar(&outputJSON, "json", false, "Output result as JSON")
-	runCmd.Flags().StringVarP(&circuitName, "circuit", "c", "", "Built-in circuit to run (use 'strange list circuits' for all options)")
+	runCmd.Flags().StringVarP(&circuitName, "circuit", "c", "", "Built-in circuit to run (use 'quantum-go list circuits' for all options)")
 	runCmd.Flags().StringToStringVarP(&circuitParams, "param", "p", nil, "Parameters for built-in circuits (e.g. s=101)")
 	runCmd.Flags().IntVarP(&numQubits, "qubits", "n", 2, "Number of qubits for the circuit")
 	runCmd.Flags().StringArrayVarP(&circuitSteps, "step", "s", []string{}, "Add a quantum gate to the circuit (e.g. \"h q[0]\")")

@@ -15,16 +15,16 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "strange",
-	Short: "Strange is a quantum circuit simulator CLI",
+	Use:   "quantum-go",
+	Short: "quantum-go is a quantum circuit simulator CLI",
 	Long: `A high-performance quantum circuit simulator written in Go.
-Ported from the original Java implementation by Johan Vos.
+Go port of the original Java Strange simulator by Johan Vos (https://github.com/redfx-quantum/strange).
 
 For a full list of supported gates, run:
-  strange list gates
+  quantum-go list gates
 
 For a list of built-in circuits, run:
-  strange list circuits`,
+  quantum-go list circuits`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if err := cmd.Help(); err != nil {
 			fmt.Fprintf(os.Stderr, "Error showing help: %v\n", err)

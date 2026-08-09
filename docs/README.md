@@ -1,16 +1,16 @@
-# Strange Simulator Documentation
+# quantum-go Documentation
 
 This directory contains research, planning, and implementation documentation for the Go port of the [Strange](https://github.com/redfx-quantum/strange) quantum simulator.
 
 ## Project Overview
 
-Strange is a quantum simulator originally written in Java. This port aims to provide a high-performance Go implementation with native complex number support and optimized gate application.
+quantum-go is a quantum simulator originally written in Java. This port aims to provide a high-performance Go implementation with native complex number support and optimized gate application.
 
 ## CLI Usage
 
-The `strange` CLI tool provides built-in discovery features:
-- `strange list circuits`: View all pre-defined quantum algorithms.
-- `strange list gates`: View all supported quantum gates and their usage.
+The `quantum-go` CLI tool provides built-in discovery features:
+- `quantum-go list circuits`: View all pre-defined quantum algorithms.
+- `quantum-go list gates`: View all supported quantum gates and their usage.
 
 ## Contents
 
