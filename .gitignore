@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Compiled binaries
+strange
+quantum-go
+
+# IDE / tool files
+.csgdaa-code/
+
+# Python virtualenv (for Qiskit verification)
+venv/
+__pycache__/
+*.pyc
