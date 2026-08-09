@@ -196,8 +196,8 @@ Note: the `if(c==1)` classically-conditioned gates are **not** supported by quan
 ## Key Points
 
 - Every QASM 2.0 file starts with `include "qelib1.inc"` — the [[openqasm-parser]] accepts this line and knows the gate vocabulary.
-- `u1(λ)` = `PhaseShift(λ)` = `Rz(λ)` up to a global phase — the parser maps `u1` to `NewPhaseShift` (see [[rotation-implementations]]).
-- `cu1(λ)` = `CR(λ)` — this is the gate used in the canonical QFT circuit. Verifiable in `qft.qasm` above. See [[rotation-implementations]] for the CR implementation.
+- `u1(λ)` = `PhaseShift(λ)` = `Rz(λ)` up to a global phase — the parser maps `u1` to `NewPhaseShift`, and `cu1` to `NewCr`. Both are in [[rotation-implementations]].
+- `cu1(λ)` = `CR(λ)` — this is the gate used in the canonical QFT circuit. Verifiable in `qft.qasm` above.
 - `ccx` (Toffoli) is mapped to quantum-go's native `NewToffoli`, not re-decomposed — see [[gate-implementations]].
 - The `if(classical_reg == value)` classically-conditioned gate is defined in QASM 2.0 but unsupported in quantum-go's parser — it falls outside the unitary circuit model.
 - The U gate (`u3`) is the universal single-qubit gate — see [[universality]] for how every named gate is a special case of U.
