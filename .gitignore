@@ -7,6 +7,7 @@ wikigraph/wikigraph
 
 # Generated output
 wikigraph/wiki_graph.html
+wiki_graph.json
 
 # IDE / tool files
 .csgdaa-code/
