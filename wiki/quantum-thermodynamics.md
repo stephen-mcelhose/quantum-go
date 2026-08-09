@@ -146,7 +146,7 @@ These are in `github.com/stephen-mcelhose/quantum-go/math` alongside the core ma
 - `GetProbability()` returns complex amplitudes — use `ToDensityMatrix` to compute ρ from them.
 - Von Neumann entropy = 0 for pure states regardless of superposition; only mixed states have positive entropy.
 - Work = ΔU = ⟨H⟩_final − ⟨H⟩_initial — a gate performs work when it changes the expectation value of the Hamiltonian.
-- `NewTimeEvolution(idx, H, t)` computes e^{−iHt} via matrix exponential — used when the circuit is described by a Hamiltonian, not gates.
+- `NewTimeEvolution(idx, H, t)` computes e^{−iHt} via matrix exponential — used when the circuit is described by a Hamiltonian, not gates. For diagonal H, this produces Rz/PhaseShift-type unitaries — see [[rotation-gates]].
 - The density matrix formalism subsumes the state vector formalism: for a pure state, ρ = |ψ⟩⟨ψ|.
 
 ## Sources

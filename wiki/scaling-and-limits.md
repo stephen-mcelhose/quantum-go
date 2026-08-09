@@ -73,6 +73,7 @@ This is the simulator's inherent irony: the algorithms it simulates are exponent
 - Grover's is qubit-cheap but iteration-expensive for large search spaces.
 - The `examples/` directory deliberately uses n < 15 so circuits run in seconds.
 - For educational purposes, the simulator is ideal up to ~20 qubits — beyond that, real QPUs or tensor-network simulators are needed.
+- Real quantum algorithms at scale require error correction to stay coherent — see [[error-correction]] for the 3-qubit bit-flip code implemented in quantum-go.
 
 ## Sources
 

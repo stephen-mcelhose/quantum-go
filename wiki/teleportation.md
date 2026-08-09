@@ -102,6 +102,7 @@ The teleportation success is verified by the marginal probability of q2 — 50% 
 - The original state at Alice is destroyed (consistent with No-Cloning Theorem).
 - Not faster-than-light: Bob needs Alice's classical bits before corrections can be applied.
 - In quantum-go, CZ serves as the controlled-Z correction gate.
+- For multi-qubit error protection (a complementary protocol using Toffoli correction), see [[error-correction]].
 
 ## Sources
 

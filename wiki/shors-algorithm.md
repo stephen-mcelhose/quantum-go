@@ -104,9 +104,10 @@ Shor circuit = H⊗offset ⊗ MulModulus gates ⊗ IQFT
 
 - Period finding is the quantum core; factoring is classical reduction around it.
 - Modular exponentiation is the expensive part — it uses [[quantum-arithmetic]] blocks repeatedly.
-- The QFT is the "frequency analyzer" that extracts the period from quantum amplitudes.
+- The QFT is the "frequency analyzer" that extracts the period from quantum amplitudes — its CR gates are controlled phase rotations, see [[rotation-gates]].
 - Measuring peaks at multiples of 2^precision/r allows continued-fraction reconstruction of r.
 - For large N, Shor's is both memory-intensive (3L qubits) and depth-intensive — see [[scaling-and-limits]].
+- Real-hardware Shor's requires quantum error correction at every layer — see [[error-correction]] for the 3-qubit code.
 - See [[algorithm-comparison]] for Shor's vs Grover's and other algorithms.
 
 ## Sources
