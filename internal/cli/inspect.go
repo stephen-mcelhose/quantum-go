@@ -29,10 +29,10 @@ Available Gates:
 | cu1(θ)    | Controlled Rotation    | cu1(1.57) q[0], q[1]   |
 | measure   | Measurement            | measure q[0]           |`,
 	Example: `  # Inspect built-in Bell state
-  strange inspect --circuit bell
+  quantum-go inspect --circuit bell
 
   # Inspect a 3-qubit GHZ state built via flags
-  strange inspect -n 3 -s "h q[0]" -s "cx q[0], q[1]" -s "cx q[1], q[2]"`,
+  quantum-go inspect -n 3 -s "h q[0]" -s "cx q[0], q[1]" -s "cx q[1], q[2]"`,
 	Args: cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		var p *core.Program
@@ -88,7 +88,7 @@ Available Gates:
 }
 
 func init() {
-	inspectCmd.Flags().StringVarP(&circuitName, "circuit", "c", "", "Built-in circuit to inspect (use 'strange list circuits' for all options)")
+	inspectCmd.Flags().StringVarP(&circuitName, "circuit", "c", "", "Built-in circuit to inspect (use 'quantum-go list circuits' for all options)")
 	inspectCmd.Flags().StringToStringVarP(&circuitParams, "param", "p", nil, "Parameters for built-in circuits")
 	inspectCmd.Flags().IntVarP(&numQubits, "qubits", "n", 2, "Number of qubits for the circuit")
 	inspectCmd.Flags().StringArrayVarP(&circuitSteps, "step", "s", []string{}, "Add a quantum gate to the circuit (e.g. \"h q[0]\")")

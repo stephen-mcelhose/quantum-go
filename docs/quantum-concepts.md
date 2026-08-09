@@ -27,7 +27,7 @@ States in perfect superposition, where information is stored in the **relative p
 | **States** | $|0\rangle, |1\rangle$ | $|+\rangle, |-\rangle$ |
 | **Bit Value** | Definite (0 or 1) | Indeterminate (50/50 probability) |
 | **Info Source** | Probability Amplitude | Relative Phase ($+$ or $-$) |
-| **Strange Gate** | $X$ (bit flip) | $Z$ (phase flip) |
+| quantum-go Gate | $X$ (bit flip) | $Z$ (phase flip) |
 | **Bloch Sphere** | Vertical Axis (Poles) | Horizontal Axis (Equator) |
 
 ---

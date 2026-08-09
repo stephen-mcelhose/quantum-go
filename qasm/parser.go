@@ -11,7 +11,7 @@ import (
 )
 
 // Parse converts an OpenQASM 2.0 string into a core.Program.
-// This is a lightweight parser that supports the subset of QASM used by Strange.
+// This is a lightweight parser that supports the subset of QASM used by the original Strange Java simulator.
 func Parse(input string) (*core.Program, error) {
 	scanner := bufio.NewScanner(strings.NewReader(input))
 	var p *core.Program

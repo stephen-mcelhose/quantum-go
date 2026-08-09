@@ -1,6 +1,6 @@
 # Algorithmic Scaling Risks
 
-Quantum algorithms often promise exponential speedups, but simulating them on classical hardware involves exponential costs. This document details the scaling behavior and risks of the most complex algorithms implemented in Strange-Go.
+Quantum algorithms often promise exponential speedups, but simulating them on classical hardware involves exponential costs. This document details the scaling behavior and risks of the most complex algorithms implemented in quantum-go.
 
 ## 1. State Vector Memory Scaling
 

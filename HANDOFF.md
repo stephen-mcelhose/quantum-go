@@ -139,10 +139,10 @@ quantum-go/
 
 - BSD 3-Clause license (Johan Vos, original Strange project)
 - Go 1.24.4, module: `github.com/stephen-mcelhose/quantum-go`
-- CLI binary: `go build -o strange ./cmd/strange/main.go` — then `./strange list circuits`
+- CLI binary: `go build -o quantum-go ./cmd/quantum-go/main.go` — then `./quantum-go list circuits`
 - 78 tests passing, including fuzz tests in `local/` and `math/`
 - Qiskit bridge at `verification/verify_against_qiskit.py` (needs Python venv + qiskit-aer)
-- The `strange` binary and `venv/` are gitignored
+- The `quantum-go` binary and `venv/` are gitignored
 
 ---
 

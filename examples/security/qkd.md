@@ -1,4 +1,4 @@
-# Learning Quantum Key Distribution (BB84) with Strange-Go
+# Learning Quantum Key Distribution (BB84) with quantum-go
 
 Quantum Key Distribution (QKD) is a secure communication method which implements a cryptographic protocol involving components of quantum mechanics. It enables two parties to produce a shared random secret key known only to them, which can then be used to encrypt and decrypt messages.
 
@@ -115,21 +115,21 @@ go test -v ./go/examples/security/qkd_test.go
 ```
 
 ### Experiment with the CLI
-Use the `strange` CLI tool to prepare and analyze a QKD qubit:
+Use the `quantum-go` CLI tool to prepare and analyze a QKD qubit:
 
 **Export the QKD preparation:**
 ```bash
-./strange export --circuit qkd
+./quantum-go export --circuit qkd
 ```
 
 **Run and see the result:**
 ```bash
-./strange run --circuit qkd
+./quantum-go run --circuit qkd
 ```
 
 **Analyze the entropy:**
 ```bash
-./strange analyze --circuit qkd
+./quantum-go analyze --circuit qkd
 ```
 
 ---

@@ -1,6 +1,6 @@
-# Strange Quantum Simulator: Go Port Research Summary
+# quantum-go: Go Port Research Summary
 
-This document establishes the requirements for porting the 'Strange' quantum simulator to Go.
+This document establishes the requirements for porting the original Strange Java simulator to Go as quantum-go.
 
 ## Core Findings
 

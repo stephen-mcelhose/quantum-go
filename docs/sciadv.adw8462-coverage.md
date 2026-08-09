@@ -21,7 +21,7 @@ The `go/examples/thermodynamics/` suite validates the paper's core derivations t
 
 *   **Generalized First Law ($W = \Delta U$)**: `TestHadamardWork` demonstrates how work is extracted or stored by rotating a state vector within an energy landscape (Hamiltonian).
 *   **Continuous-Time Dynamics**: `TestContinuousWork` validates the transition from discrete gates to the continuous evolution discussed in the paper's "Generalized Ehrenfest Theorem" section.
-*   **Entanglement as Information**: The `strange analyze` command calculates entropy for individual qubits. In a Bell state, it returns $\ln(2) \approx 0.693$, directly quantifying the "information-powered" potential of the system.
+*   **Entanglement as Information**: The `quantum-go analyze` command calculates entropy for individual qubits. In a Bell state, it returns $\ln(2) \approx 0.693$, directly quantifying the "information-powered" potential of the system.
 
 ## 3. Implementation Gaps
 

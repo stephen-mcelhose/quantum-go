@@ -1,4 +1,4 @@
-# Verifying Strange-Go Results in Quirk
+# Verifying quantum-go Results in Quirk
 
 This guide explains how to manually verify the numerical results from the `quantum-go` simulator using the visual [Quirk Quantum Simulator](https://algassert.com/quirk).
 
@@ -7,7 +7,7 @@ This guide explains how to manually verify the numerical results from the `quant
 
 ## Verification Steps
 
-### 1. Generate Strange-Go Reference Data
+### 1. Generate quantum-go Reference Data
 In your Go code, export the program to OpenQASM and print the final state vector amplitudes:
 
 ```go
@@ -35,9 +35,9 @@ To compare the numbers precisely:
 3.  **Hover** your mouse over the probe. A tooltip will appear showing the **Complex Amplitudes** for every binary state.
 
 ### 4. Binary State Mapping (Endianness)
-Strange-Go and Quirk both use **Little-Endian** qubit ordering (LSB is Wire 0). Use this table to map indices:
+quantum-go and Quirk both use **Little-Endian** qubit ordering (LSB is Wire 0). Use this table to map indices:
 
-| Strange-Go Index | Binary State | Quirk Wire State |
+| quantum-go Index | Binary State | Quirk Wire State |
 | :--- | :--- | :--- |
 | `0` | `|000...>` | All wires are $|0\rangle$ |
 | `1` | `|001...>` | **Top wire** (0) is $|1\rangle$ |

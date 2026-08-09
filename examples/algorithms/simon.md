@@ -11,15 +11,15 @@ The goal is to find the secret string $s$.
 
 Classically, finding $s$ requires checking a number of inputs proportional to $2^{n/2}$ (the birthday problem). Simon's algorithm finds $s$ using only $O(n)$ queries to the quantum oracle.
 
-## Implementation in Strange
+## Implementation in quantum-go
 
-The "Strange" simulator provides a built-in Simon's algorithm implementation.
+The quantum-go simulator provides a built-in Simon's algorithm implementation.
 
 ### Usage via CLI
 
 ```bash
 # Run Simon's algorithm with a hidden string '11'
-./strange run --circuit simon -p s=11
+./quantum-go run --circuit simon -p s=11
 ```
 
 The output will show measurements $y$ such that $y \cdot s = 0 \pmod 2$. By repeating the execution and collecting enough independent equations, you can solve for $s$ classically using Gaussian elimination.

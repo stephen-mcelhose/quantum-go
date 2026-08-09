@@ -2,7 +2,7 @@
 
 ## Summary
 
-Successfully expanded the Strange vs Qiskit verification suite from **18 to 38 tests** by adding all examples from Strange CLI help documentation.
+Successfully expanded the quantum-go vs Qiskit verification suite from **18 to 38 tests** by adding all examples from quantum-go CLI help documentation.
 
 ## What Was Added
 
@@ -12,9 +12,9 @@ Successfully expanded the Strange vs Qiskit verification suite from **18 to 38 t
 - Gate compositions and transformations
 
 ### New Tests (20)
-Added from Strange CLI `--help` output:
+Added from quantum-go CLI `--help` output:
 
-#### From `strange -h` and `strange run -h`
+#### From `quantum-go -h` and `quantum-go run -h`
 - Identity gate (id)
 - CNOT (cx)
 - Controlled-Z (cz)
@@ -23,16 +23,16 @@ Added from Strange CLI `--help` output:
 - Phase rotation (u1)
 - Controlled phase rotation (cu1)
 
-#### From `strange inspect -h`
+#### From `quantum-go inspect -h`
 - 3-qubit GHZ state examples
 
-#### From `strange export -h`
+#### From `quantum-go export -h`
 - Custom GHZ state building
 
-#### From `strange verify -h`
+#### From `quantum-go verify -h`
 - Hadamard + phase rotation combinations
 
-#### From `strange analyze -h`
+#### From `quantum-go analyze -h`
 - Bell state analysis examples
 - Multi-qubit GHZ analysis
 
@@ -60,12 +60,12 @@ Every example shown in these commands is now tested:
 
 | Command | Examples Added | Status |
 |---------|---------------|--------|
-| `strange -h` | Gate table examples | ✅ |
-| `strange run -h` | Bell state, multi-qubit | ✅ |
-| `strange verify -h` | Phase rotation combos | ✅ |
-| `strange inspect -h` | GHZ state building | ✅ |
-| `strange export -h` | Custom circuits | ✅ |
-| `strange analyze -h` | Entangled states | ✅ |
+| `quantum-go -h` | Gate table examples | ✅ |
+| `quantum-go run -h` | Bell state, multi-qubit | ✅ |
+| `quantum-go verify -h` | Phase rotation combos | ✅ |
+| `quantum-go inspect -h` | GHZ state building | ✅ |
+| `quantum-go export -h` | Custom circuits | ✅ |
+| `quantum-go analyze -h` | Entangled states | ✅ |
 
 ## Gate Coverage Completeness
 
@@ -100,7 +100,7 @@ python3 verify_against_qiskit.py
 Expected output:
 ```
 ======================================================================
- STRANGE vs QISKIT VERIFICATION SUITE
+ quantum-go vs QISKIT VERIFICATION SUITE
  Includes: Learning Transcript + CLI Help Examples
 ======================================================================
 ...

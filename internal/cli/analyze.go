@@ -40,13 +40,13 @@ Available Gates:
 | cu1(θ)    | Controlled Rotation    | cu1(1.57) q[0], q[1]   |
 | measure   | Measurement            | measure q[0]           |`,
 	Example: `  # Analyze built-in Bell state
-  strange analyze --circuit bell
+  quantum-go analyze --circuit bell
 
   # Analyze a 2-qubit Bell state built via flags
-  strange analyze -n 2 -s "h q[0]" -s "cx q[0], q[1]"
+  quantum-go analyze -n 2 -s "h q[0]" -s "cx q[0], q[1]"
 
   # Analyze a 3-qubit GHZ state
-  strange analyze -n 3 -s "h q[0]" -s "cx q[0], q[1]" -s "cx q[1], q[2]"`,
+  quantum-go analyze -n 3 -s "h q[0]" -s "cx q[0], q[1]" -s "cx q[1], q[2]"`,
 	Args: cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		var p *core.Program
@@ -129,7 +129,7 @@ Available Gates:
 }
 
 func init() {
-	analyzeCmd.Flags().StringVarP(&circuitName, "circuit", "c", "", "Built-in circuit to analyze (use 'strange list circuits' for all options)")
+	analyzeCmd.Flags().StringVarP(&circuitName, "circuit", "c", "", "Built-in circuit to analyze (use 'quantum-go list circuits' for all options)")
 	analyzeCmd.Flags().StringToStringVarP(&circuitParams, "param", "p", nil, "Parameters for built-in circuits")
 	analyzeCmd.Flags().IntVarP(&numQubits, "qubits", "n", 2, "Number of qubits for the circuit")
 	analyzeCmd.Flags().StringArrayVarP(&circuitSteps, "step", "s", []string{}, "Add a quantum gate to the circuit (e.g. \"h q[0]\")")

@@ -20,7 +20,7 @@ The automated test harness in `go/local/verification_test.go` executes quantum c
 | **Fredkin (CSWAP)** | State Permutation | Controlled target swap |
 
 ### 2. Qubit Ordering (Endianness)
-Strange-Go uses **Little-Endian** qubit ordering.
+quantum-go uses **Little-Endian** qubit ordering.
 - **Qubit 0** is the Least Significant Bit (LSB).
 - **Qubit N-1** is the Most Significant Bit (MSB).
 
@@ -31,7 +31,7 @@ This matches the convention used by [Qiskit](https://qiskit.org/), making direct
 To facilitate comparison with external platforms, `quantum-go` supports the **OpenQASM 2.0** standard.
 
 ### OpenQASM 2.0 Exporter
-Any `core.Program` can be exported to OpenQASM using the `ToQASM()` method. This allows you to verify Strange-Go circuits on high-performance backends or hardware.
+Any `core.Program` can be exported to OpenQASM using the `ToQASM()` method. This allows you to verify quantum-go circuits on high-performance backends or hardware.
 
 ```go
 p := core.NewProgram(2)
@@ -50,27 +50,27 @@ The following standards and tools are used to verify the outputs of this simulat
 
 ## Integrated Verification (CLI)
 
-The `strange` CLI provides a `verify` subcommand to validate results against theoretical truth or external references.
+The `quantum-go` CLI provides a `verify` subcommand to validate results against theoretical truth or external references.
 
 ```bash
 # Verify against theoretical math constants (built-in)
-./strange verify --circuit bell --mode theoretical
+./quantum-go verify --circuit bell --mode theoretical
 
 # Verify against Qiskit Aer (requires python3 and qiskit-aer)
-./strange verify --circuit ghz --qubits 3 --mode qiskit
+./quantum-go verify --circuit ghz --qubits 3 --mode qiskit
 ```
 
 ## Modular Verification (Piping)
 
-For more flexible workflows, you can pipe QASM output from `strange` directly into the standalone `qiskit_verify.py` tool.
+For more flexible workflows, you can pipe QASM output from `quantum-go` directly into the standalone `qiskit_verify.py` tool.
 
 ```bash
 # Workflow: Export QASM -> Simulate in Qiskit -> Print State Vector
-./strange export --circuit bell | python3 ../qiskit_verify.py
+./quantum-go export --circuit bell | python3 ../qiskit_verify.py
 
-# Workflow: Run Strange -> Save JSON -> Compare in Qiskit
-./strange run circuit.qasm --json > result.json
-./strange export circuit.qasm | python3 ../qiskit_verify.py --compare result.json
+# Workflow: Run quantum-go -> Save JSON -> Compare in Qiskit
+./quantum-go run circuit.qasm --json > result.json
+./quantum-go export circuit.qasm | python3 ../qiskit_verify.py --compare result.json
 ```
 
 ## Running Verification Tests

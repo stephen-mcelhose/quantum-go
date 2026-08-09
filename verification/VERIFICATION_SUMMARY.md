@@ -9,23 +9,23 @@
 
 ## Verification Process
 
-The verification process compares Strange's quantum simulation against IBM Qiskit:
+The verification process compares quantum-go's quantum simulation against IBM Qiskit:
 
 ```mermaid
 flowchart TB
     Start([Test Suite]) --> Parse[Parse Test Definition]
-    Parse --> Strange[Run in Strange]
+    Parse --> QuantumGo[Run in quantum-go]
     Parse --> Qiskit[Run in Qiskit]
     
-    Strange --> StrangeExec[Execute Circuit]
-    StrangeExec --> StrangeState[Get State Vector]
-    StrangeState --> StrangeProb[Calculate Probabilities]
+    QuantumGo --> QuantumGoExec[Execute Circuit]
+    QuantumGoExec --> QuantumGoState[Get State Vector]
+    QuantumGoState --> QuantumGoProb[Calculate Probabilities]
     
     Qiskit --> QiskitExec[Execute Circuit]
     QiskitExec --> QiskitState[Get State Vector]
     QiskitState --> QiskitProb[Calculate Probabilities]
     
-    StrangeProb --> Compare{Compare<br/>Probabilities}
+    QuantumGoProb --> Compare{Compare<br/>Probabilities}
     QiskitProb --> Compare
     
     Compare -->|Diff < 0.0001| Pass[✅ PASS]
@@ -37,7 +37,7 @@ flowchart TB
     Report --> Summary[38/38 Tests Passed]
     
     style Start fill:#e1f5ff
-    style Strange fill:#fff4e1
+    style QuantumGo fill:#fff4e1
     style Qiskit fill:#e1ffe1
     style Compare fill:#ffe1f5
     style Pass fill:#d4edda
@@ -47,7 +47,7 @@ flowchart TB
 
 **Process Steps:**
 1. **Test Definition** - Each test specifies circuit, gates, and expected behavior
-2. **Parallel Execution** - Same circuit runs in both Strange (Go) and Qiskit (Python)
+2. **Parallel Execution** - Same circuit runs in both quantum-go and Qiskit (Python)
 3. **State Vector Extraction** - Both simulators produce quantum state vectors
 4. **Probability Calculation** - Convert amplitudes to measurement probabilities
 5. **Numerical Comparison** - Compare probabilities with tolerance of 0.0001
@@ -57,7 +57,7 @@ flowchart TB
 
 ## Bottom Line
 
-**Strange quantum simulator produces identical results to IBM Qiskit for all tested operations.**
+**quantum-go produces identical results to IBM Qiskit for all tested operations.**
 
 Zero discrepancies found. 100% success rate. 55/55 tests passed.
 
@@ -101,7 +101,7 @@ Every quantum operation from the beginner learning session:
 
 ### Test: Hadamard on Single Qubit
 ```
-Strange:                Qiskit:
+quantum-go:             Qiskit:
 |0>: 0.5000            |0>: 0.5000
 |1>: 0.5000            |1>: 0.5000
                        
@@ -110,7 +110,7 @@ Strange:                Qiskit:
 
 ### Test: Three Qubit Superposition
 ```
-Strange:                Qiskit:
+quantum-go:             Qiskit:
 |000>: 0.1250          |000>: 0.1250
 |001>: 0.1250          |001>: 0.1250
 |010>: 0.1250          |010>: 0.1250
@@ -127,7 +127,7 @@ Strange:                Qiskit:
 
 ## Confidence Level
 
-**HIGH** - Strange is suitable for:
+**HIGH** - quantum-go is suitable for:
 - ✅ Educational use
 - ✅ Algorithm development
 - ✅ Circuit prototyping
@@ -158,5 +158,5 @@ Expected: 55/55 tests passed ✅
 
 **Verified By:** Automated test suite comparing statevector probabilities  
 **Tolerance:** < 0.0001 (0.01% difference)  
-**Framework Versions:** Strange (Go) vs Qiskit-Aer (Python)  
+**Framework Versions:** quantum-go vs Qiskit-Aer (Python)  
 **Last Run:** January 19, 2026 - All 55 tests passed ✅

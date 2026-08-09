@@ -1,4 +1,4 @@
-# Learning Quantum Arithmetic with Strange-Go
+# Learning Quantum Arithmetic with quantum-go
 
 Quantum Arithmetic performs mathematical operations on quantum registers in superposition. One of the most efficient ways to perform addition on a quantum computer is the **Draper Adder**, which uses the Quantum Fourier Transform (QFT).
 
@@ -58,7 +58,7 @@ p.AddStep(core.NewStep(core.NewX(2), core.NewX(3)))
 ```
 
 ### Step 2: Apply the Add Gate
-The `core.NewAdd` gate in Strange-Go automatically handles the QFT, the phase additions, and the Inverse QFT.
+The `core.NewAdd` gate in quantum-go automatically handles the QFT, the phase additions, and the Inverse QFT.
 
 ```go
 // Add(x_start, x_end, y_start, y_end)
@@ -114,21 +114,21 @@ go test -v ./go/examples/arithmetic/adder_test.go
 ```
 
 ### Experiment with the CLI
-Use the `strange` CLI tool to export and run the built-in quantum adder:
+Use the `quantum-go` CLI tool to export and run the built-in quantum adder:
 
 **Export the Adder circuit:**
 ```bash
-./strange export --circuit adder
+./quantum-go export --circuit adder
 ```
 
 **Run the addition:**
 ```bash
-./strange run --circuit adder
+./quantum-go run --circuit adder
 ```
 
 **Inspect the Adder gate count:**
 ```bash
-./strange inspect --circuit adder
+./quantum-go inspect --circuit adder
 ```
 
 ---

@@ -27,10 +27,10 @@ Available Gates:
 | cu1(θ)    | Controlled Rotation    | cu1(1.57) q[0], q[1]   |
 | measure   | Measurement            | measure q[0]           |`,
 	Example: `  # Export built-in Bell state
-  strange export --circuit bell
+  quantum-go export --circuit bell
 
   # Build custom GHZ state using manual steps
-  strange export -n 3 -s "h q[0]" -s "cx q[0], q[1]" -s "cx q[1], q[2]"`,
+  quantum-go export -n 3 -s "h q[0]" -s "cx q[0], q[1]" -s "cx q[1], q[2]"`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		var p *core.Program
 		var err error
@@ -54,7 +54,7 @@ Available Gates:
 }
 
 func init() {
-	exportCmd.Flags().StringVarP(&circuitName, "circuit", "c", "bell", "Built-in circuit to export (use 'strange list circuits' for all options)")
+	exportCmd.Flags().StringVarP(&circuitName, "circuit", "c", "bell", "Built-in circuit to export (use 'quantum-go list circuits' for all options)")
 	exportCmd.Flags().StringToStringVarP(&circuitParams, "param", "p", nil, "Parameters for built-in circuits")
 	exportCmd.Flags().IntVarP(&numQubits, "qubits", "n", 2, "Number of qubits for the circuit")
 	exportCmd.Flags().StringArrayVarP(&circuitSteps, "step", "s", []string{}, "Add a quantum gate to the circuit (e.g. \"h q[0]\")")

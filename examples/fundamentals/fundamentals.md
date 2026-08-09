@@ -1,4 +1,4 @@
-# Learning Quantum Fundamentals with Strange-Go
+# Learning Quantum Fundamentals with quantum-go
 
 Quantum computing is built on a few foundational principles: **Superposition**, **Unitary Transformations**, and **Measurement**. In this guide, we'll explore these concepts using the basic gates provided by `quantum-go`.
 
@@ -123,7 +123,7 @@ This shows the qubit has a 50% chance of being measured as $0$ or $1$.
 ```
 |011>: 1.0000
 ```
-Since Strange-Go uses **little-endian** notation, $q_0$ is the rightmost bit. Applying $X$ to $q_0$ and $q_1$ results in binary `011` (decimal 3).
+Since quantum-go uses **little-endian** notation, $q_0$ is the rightmost bit. Applying $X$ to $q_0$ and $q_1$ results in binary `011` (decimal 3).
 
 ---
 
@@ -152,27 +152,27 @@ go test -v ./go/examples/fundamentals/...
 ```
 
 	### Experiment with the CLI
-	Use the `strange` CLI tool to experiment with basic gates:
+	Use the `quantum-go` CLI tool to experiment with basic gates:
 
 	**Discover supported gates:**
 	```bash
-	./strange list gates
+	./quantum-go list gates
 	```
 
 	**Create a superposition qubit:**
 
 ```bash
-./strange run -n 1 -s "h q[0]"
+./quantum-go run -n 1 -s "h q[0]"
 ```
 
 **Flip a bit and inspect:**
 ```bash
-./strange inspect -n 1 -s "x q[0]"
+./quantum-go inspect -n 1 -s "x q[0]"
 ```
 
 **Apply a rotation gate ($R_z(\pi/4)$):**
 ```bash
-./strange run -n 1 -s "u1(0.785398) q[0]"
+./quantum-go run -n 1 -s "u1(0.785398) q[0]"
 ```
 
 ---

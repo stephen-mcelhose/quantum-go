@@ -1,4 +1,4 @@
-# Learning Quantum Teleportation with Strange-Go
+# Learning Quantum Teleportation with quantum-go
 
 Quantum Teleportation is a protocol that allows the transfer of a quantum state over a distance using a classical communication channel and a pre-shared entangled pair.
 
@@ -129,21 +129,21 @@ go test -v ./go/examples/networking/teleportation_test.go
 ```
 
 ### Experiment with the CLI
-Use the `strange` CLI tool to export and run the teleportation circuit:
+Use the `quantum-go` CLI tool to export and run the teleportation circuit:
 
 **Export to QASM:**
 ```bash
-./strange export --circuit teleportation
+./quantum-go export --circuit teleportation
 ```
 
 **Run the simulation:**
 ```bash
-./strange run --circuit teleportation
+./quantum-go run --circuit teleportation
 ```
 
 **Inspect the gates:**
 ```bash
-./strange inspect --circuit teleportation
+./quantum-go inspect --circuit teleportation
 ```
 
 ---

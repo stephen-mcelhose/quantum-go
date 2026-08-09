@@ -26,7 +26,7 @@ The "classical" basis — |0⟩ and |1⟩ sit at the poles of the Bloch Sphere. 
 | States           | \|0⟩, \|1⟩                           | \|+⟩, \|−⟩                         |
 | Bit value        | Definite (0 or 1)                     | Indeterminate (50/50 probability)   |
 | Information in   | Probability amplitude                 | Relative phase (+ or −)             |
-| "Strange" gate   | X (bit flip)                          | Z (phase flip)                      |
+| "quantum-go" gate   | X (bit flip)                          | Z (phase flip)                      |
 | Bloch sphere     | Vertical axis (poles)                 | Horizontal axis (equator)           |
 
 ## Core Principles

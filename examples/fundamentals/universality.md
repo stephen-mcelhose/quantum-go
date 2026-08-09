@@ -26,7 +26,7 @@ $$U(\theta, \phi, \lambda) = \begin{pmatrix} \cos(\theta/2) & -e^{i\lambda}\sin(
 
 Modern quantum compilers (like those for IBM Q or Rigetti) often decompose all single-qubit gates into a single hardware-native gate type, typically the U gate or a similar variant. This simplifies the physical calibration process.
 
-In Strange-Go, you can use the `NewU` function to create these gates:
+In quantum-go, you can use the `NewU` function to create these gates:
 
 ```go
 // Create a Hadamard equivalent
