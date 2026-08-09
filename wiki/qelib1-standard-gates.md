@@ -9,7 +9,7 @@ timestamp: 2026-08-09T03:26:15Z
 
 # qelib1 Standard Gate Library
 
-`qelib1.inc` is the standard header included by every QASM 2.0 file via `include "qelib1.inc";`. It defines all named gates in terms of two hardware primitives: `U(θ,φ,λ)` (universal single-qubit) and `CX` (CNOT). The quantum-go parser reads this header implicitly when it sees the include statement.
+`qelib1.inc` is the standard header included by every QASM 2.0 file via `include "qelib1.inc";`. It defines all named gates in terms of two hardware primitives: `U(θ,φ,λ)` (universal single-qubit) and `CX` (CNOT). The [[openqasm-parser]] reads this header implicitly when it sees the include statement.
 
 > Source: Apache 2.0 — [Qiskit/openqasm @ OpenQASM2.x](https://github.com/Qiskit/openqasm/tree/OpenQASM2.x)
 
@@ -159,7 +159,7 @@ cu1(pi/2) q[3],q[2];
 h q[3];
 measure q -> c;
 ```
-Note: uses `cu1` (= `NewCr`) for the controlled-phase rotations — exactly how quantum-go's `NewFourier` builds the QFT.
+Note: uses `cu1` (= `NewCr`) for the controlled-phase rotations — exactly how quantum-go's `NewFourier` builds the QFT. See [[qft-deep-dive]] for the full circuit analysis.
 
 ### Teleportation (`teleport.qasm`)
 ```qasm
@@ -195,11 +195,12 @@ Note: the `if(c==1)` classically-conditioned gates are **not** supported by quan
 
 ## Key Points
 
-- Every QASM 2.0 file starts with `include "qelib1.inc"` — the parser accepts this line and knows the gate vocabulary.
-- `u1(λ)` = `PhaseShift(λ)` = `Rz(λ)` up to a global phase — the parser maps `u1` to `NewPhaseShift`.
-- `cu1(λ)` = `CR(λ)` — this is the gate used in the canonical QFT circuit. Verifiable in `qft.qasm` above.
-- `ccx` (Toffoli) is mapped to quantum-go's native `NewToffoli`, not re-decomposed.
+- Every QASM 2.0 file starts with `include "qelib1.inc"` — the [[openqasm-parser]] accepts this line and knows the gate vocabulary.
+- `u1(λ)` = `PhaseShift(λ)` = `Rz(λ)` up to a global phase — the parser maps `u1` to `NewPhaseShift` (see [[rotation-implementations]]).
+- `cu1(λ)` = `CR(λ)` — this is the gate used in the canonical QFT circuit. Verifiable in `qft.qasm` above. See [[rotation-implementations]] for the CR implementation.
+- `ccx` (Toffoli) is mapped to quantum-go's native `NewToffoli`, not re-decomposed — see [[gate-implementations]].
 - The `if(classical_reg == value)` classically-conditioned gate is defined in QASM 2.0 but unsupported in quantum-go's parser — it falls outside the unitary circuit model.
+- The U gate (`u3`) is the universal single-qubit gate — see [[universality]] for how every named gate is a special case of U.
 
 ## Sources
 

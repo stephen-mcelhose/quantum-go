@@ -29,7 +29,7 @@ go test -run=FuzzToffoli ./local/...
 
 ### FuzzToffoli
 
-**Purpose:** Verify Toffoli truth table for all 8 three-qubit computational basis states.
+**Purpose:** Verify the Toffoli truth table (see [[gate-implementations]]) for all 8 three-qubit computational basis states.
 
 **Seed corpus:** 8 seeds (0-7, one per initial state).
 
@@ -51,7 +51,7 @@ if (initialState & 3) == 3 {  // q0=1 and q1=1
 
 ### FuzzFourier
 
-**Purpose:** Verify QFT × IQFT = Identity (unitarity property).
+**Purpose:** Verify QFT × IQFT = Identity (unitarity property). For QFT internals, see [[qft-deep-dive]] and [[arithmetic-gates]].
 
 **Seeds:** 2, 3, 4 qubits.
 
@@ -73,7 +73,7 @@ p.AddStep(core.NewStep(invFourier))
 
 ### FuzzAdd
 
-**Purpose:** Verify quantum addition `x + y mod 2^m` for random x, y, m.
+**Purpose:** Verify quantum addition `x + y mod 2^m` for random x, y, m. The Draper adder being tested is documented in [[arithmetic-gates]].
 
 **Seeds:** (2,1,1) and (3,3,1).
 
@@ -95,7 +95,7 @@ for i := 0; i < m; i++ {
 
 ### FuzzMatrixMul
 
-**Purpose:** Matrix multiplication doesn't panic and produces correct output dimensions.
+**Purpose:** Matrix multiplication (see [[quantum-linear-algebra]]) doesn't panic and produces correct output dimensions.
 
 **Property tested:**
 1. `Mul(A, B)` doesn't panic for valid dimensions (c1 = r2 enforced).
@@ -139,6 +139,7 @@ The simulator fuzz tests do NOT use panic recovery — panics are expected to su
 - Math fuzz tests check that matrix operations don't panic on random dimensions.
 - `numQubits > 6` is rejected in FuzzFourier — state vector would be 64+ elements (acceptable but slower).
 - These fuzz tests run as unit tests with their seed corpus when `-fuzz` is not specified.
+- For the broader test suite context, see [[testing-strategy]]; for state-vector correctness tests, see [[verification-tests]].
 
 ## Sources
 
