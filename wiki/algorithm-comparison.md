@@ -61,6 +61,8 @@ Concise side-by-side comparison of every quantum algorithm implemented in quantu
 | Bernstein-Vazirani     | `NewInnerProductOracle(s)`       | XOR s·x into ancilla qubit                          |
 | Simon's                | `NewSimonOracle(s)`              | f(x) = f(x⊕s) in 2n-qubit block                   |
 
+For oracle gate construction and the full pre-built oracle catalogue, see [[oracle-gates]].
+
 ## Phase Kickback (Used By All Query Algorithms)
 
 All query algorithms from DJ through Grover use **phase kickback**:
@@ -88,8 +90,10 @@ The oracle's effect is written as a phase on the input qubit — ancilla state u
 
 ## Key Points
 
-- Grover requires O(√N) *iterations* — `NewGroverProgram()` does 1 iteration for n=2 (optimal for N=4).
-- Shor's requires repeated quantum runs + classical continued fractions to extract the period; the quantum part outputs frequencies, not factors directly.
+- Grover requires O(√N) *iterations* — `NewGroverProgram()` does 1 iteration for n=2 (optimal for N=4). See [[grovers-algorithm]].
+- Shor's requires repeated quantum runs + classical continued fractions to extract the period; the quantum part outputs frequencies, not factors directly. See [[shors-algorithm]].
 - Simon's algorithm is BQP-complete relative to the Simon oracle — it is the quantum algorithm that "proves" exponential speedup.
-- BB84 security is information-theoretic, not computational — not vulnerable to quantum computers.
-- Teleportation requires a pre-shared Bell pair AND 2 bits of classical communication per qubit transferred.
+- BB84 security is information-theoretic, not computational — not vulnerable to quantum computers. See [[bb84-qkd]].
+- Teleportation requires a pre-shared Bell pair AND 2 bits of classical communication per qubit transferred. See [[teleportation]].
+- Error correction, arithmetic, and QFT deep-dives: [[error-correction]], [[arithmetic-gates]], [[qft-deep-dive]].
+- All factory functions (`NewGroverProgram`, `NewShorProgram`, etc.) are defined in [[circuits-library]].

@@ -111,8 +111,10 @@ Then add it to the `tests` slice in `TestVerifyStandardStates`. The framework ha
 - All expected amplitudes must be normalized (sum of squares = 1).
 - Tolerance 1e-6 is tight enough to catch gate implementation bugs but forgiving of float64 rounding.
 - Toffoli and Fredkin tests use little-endian index encoding — verify index arithmetic when debugging.
-- The `Superdense Coding` test exercises `core.NewSuperdenseCodingProgram()` — a built-in program helper.
-- Adding new gates → add a verification test case here first, then implement the gate.
+- The `Superdense Coding` test exercises `core.NewSuperdenseCodingProgram()` — a built-in program helper from [[circuits-library]].
+- Adding new gates → add a verification test case here first, then implement the gate. The full gate addition workflow is in [[how-to-add-a-new-gate]].
+- `res.GetProbability()` returns the amplitude vector from the [[simulation-engine]] — see [[simulation-engine]] for the naming history.
+- For the broader test suite context see [[testing-strategy]]; for randomised property tests see [[fuzz-testing]].
 
 ## Sources
 
